@@ -1,5 +1,4 @@
-version: '3.8'
-
+version: '3.9'
 services:
   mysql:
     image: mysql:latest
@@ -8,6 +7,8 @@ services:
     restart: on-failure
     ports:
       - '3307:3307'
+    depends_on:
+      - php
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: docker_kiloupabocou
