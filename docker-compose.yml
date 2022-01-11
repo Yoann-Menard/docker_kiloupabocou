@@ -1,18 +1,17 @@
-version:  '3.8'
+version: '3.8'
 
-services:      
+services:
   mysql:
     image: mysql:latest
     volumes:
       - './:/db-data'
     restart: on-failure
     ports:
-      - '3306:3306'
+      - '3307:3307'
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: docker_kiloupabocou
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_PASSWORD: password
 
   php:
     build:
